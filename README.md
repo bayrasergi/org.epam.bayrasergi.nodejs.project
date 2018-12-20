@@ -1,2 +1,2 @@
-# org.epam.bayrasergi.nodejs.project
+# ReportsApp
 Epam's course NodeJS project for studying main framework features in web-development
