@@ -1,7 +1,4 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+const User = require('../model/user');
+const userRepository = require('./userRepository');
 
-const adapter = new FileSync('db.json');
-const db = low(adapter);
-
-db.defaults()
+module.exports.userRepository = userRepository;
