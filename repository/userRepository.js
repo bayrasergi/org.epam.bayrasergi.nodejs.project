@@ -1,25 +1,30 @@
 const db = require('./db');
 const User = require('../model/user');
 
-module.exports.getUser = (username, password) => {
+module.exports.findUserByEmail = (email) => {
     let users = db.get('users');
-    if (!users || !users.value().length){
+    if (email === undefined || email === null || !email.length){
         return null;
     }
-    const user = users.find({username: username, password: password}).value();
+    const user = users.find({email: email}).value();
     if (!user){
         return null;
     }
-    return new User(user.userId, user.email, user.password, user.surname, user.position, user.pathToPhoto);
+    return user;
 };
 
-module.exports.addUser = (user) => {
-    if (user.email != null &&
-        user.password != null &&
-        user.name != null &&
-        user.surname != null &&
-        user.position != null &&
-        user.pathToPhoto != null){
-            db.get('users').push(user).write();
-        }
-}
+module.exports.findUserById = (userId) => {
+    let users = db.get('users');
+    if (userId === undefined || userId === null || !userId.length){
+        return null;
+    }
+    const user = users.find({userId: userId}).value();
+    if (!user){
+        return null;
+    }
+    return user;
+};
+
+module.exports.createUser = (user) => {
+    db.get('users').push(user).write();
+};
