@@ -18,7 +18,7 @@ function setUserInfo(req) {
     }
 }
 
-exports.login = function(req, res, next) {
+module.exports.login = function(req, res, next) {
     let userInfo = setUserInfo(req.user);
 
     res.status(200).json({
@@ -27,7 +27,7 @@ exports.login = function(req, res, next) {
     });
 };
 
-exports.reigster = function(req, res, next) {
+module.exports.register = function(req, res, next) {
     const email = req.body.email;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
