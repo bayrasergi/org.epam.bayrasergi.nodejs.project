@@ -1,10 +1,10 @@
 class User {
-    constructor(userId, email, password, name, surname, position, pathToPhoto){
+    constructor(userId, email, password, firstName, lastName, position, pathToPhoto){
         this.userId = userId;
         this.email = email;
         this.password = password;
-        this.name = name;
-        this.surname = surname,
+        this.firstName = firstName;
+        this.lastName = lastName,
         this.position = position,
         this.pathToPhoto = pathToPhoto;
     }
