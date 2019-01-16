@@ -1,6 +1,7 @@
 const express = require('express');
 const config = require('./config/main');
 const AuthRoute = require('./routes/authentication');
+const YandexRoute = require('./routes/yandex');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -14,7 +15,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(AuthRoute);
+//app.use(AuthRoute);
+app.use('/yandex', YandexRoute);
 
 app.listen(PORT, err => {
   if (err) {
