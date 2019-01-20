@@ -20,6 +20,7 @@
     "axios": "^0.18.0",
     "chai": "^4.2.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "halson": "^3.0.0",
     "jest": "^23.6.0",
     "jsonwebtoken": "^8.4.0",

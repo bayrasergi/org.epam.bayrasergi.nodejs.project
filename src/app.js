@@ -2,9 +2,17 @@ const express = require('express');
 const config = require('./config/main');
 const AuthRoute = require('./routes/authentication');
 const YandexRoute = require('./routes/yandex');
+const session = require('express-session');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
+
+app.use(session({
+  secret: config.secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  
